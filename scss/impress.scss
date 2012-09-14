@@ -1,0 +1,197 @@
+@import "compass/css3";
+$experimental-support-for-svg: true;
+
+
+.cms table.ss-gridfield-table tbody td{
+  max-width:400px;
+  overflow:hidden;
+  white-space:normal;
+}
+
+.typography{
+b, strong {
+  font-weight: bold; 
+}
+
+i, em {
+  font-style: italic; 
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  padding: 0 0.1em;
+  background: rgba(255, 255, 255, 0.5);
+  text-shadow: -1px -1px 2px rgba(100, 100, 100, 0.9);
+  border-radius: 0.2em;
+  @include single-transition(0.5s);
+  &:hover, &:focus {
+    background: rgba(255, 255, 255, 1);
+    text-shadow: -1px -1px 2px rgba(100, 100, 100, 0.5); 
+  } 
+}
+
+.step {
+  position: relative;
+  width: 900px;
+  padding: 40px;
+  margin: 20px auto;
+  @include box-sizing(border-box);
+  font-family: 'PT Serif', georgia, serif;
+  font-size: 48px;
+  line-height: 1.5; 
+}
+
+.step {
+  margin: 0;
+  opacity: 0.3;
+  @include single-transition(opacity 1s);
+  &.active {
+    opacity: 1; 
+  } 
+}
+
+
+.slide {
+  display: block;
+  width: 900px;
+  height: 700px;
+  padding: 40px 60px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  color: rgb(102, 102, 102);
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: -1px;
+  q {
+    display: block;
+    font-size: 50px;
+    line-height: 72px;
+    margin-top: 100px;
+    strong {
+      white-space: nowrap; 
+    } 
+  } 
+}
+
+/* Styling for presentation page */
+
+  h1.title {
+    font-size: 190px;
+    @include translateZ(50px);
+  }
+  .footnote {
+    font-size: 32px; 
+  } 
+
+
+.big {
+  width: 600px;
+  text-align: center;
+  font-size: 60px;
+  line-height: 1;
+}
+
+.tiny {
+    text-align: center;
+}
+
+.small{
+    font-size:0.6em;
+    line-height:1.2em;
+    margin-bottom:25px;
+}
+
+.center{
+    text-align:center;
+}
+
+.center{
+    text-align:center;
+}
+
+code{
+  display:block;
+  font-size:0.5em !important;
+  border:2px solid #ddd;
+  background-color:#333;
+  color:#fff;
+  padding:20px;
+  -webkit-font-smoothing:auto;
+  margin:10px 0;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-background-clip: padding-box;
+  background-clip:padding-box;
+  font-family: Monaco,"DejaVu Sans Mono","Courier New",monospace;
+  -webkit-border-radius: 10px;    
+  border-radius: 10px;
+  span{
+    color:#ccc;
+    display:block !important;
+    margin-top:15px;
+  }
+  em{
+    color:#F9FE64;
+  }
+  strong{
+    color:#CC0E2E;
+  } 
+}
+
+.slide code{
+    line-height:1.5em;
+    font-size:22px !important;
+}
+
+
+
+#overview {
+  display: none; 
+}
+
+.impress-on-overview .step {
+  opacity: 1;
+  cursor: pointer; 
+}
+
+.hint {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 200px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #EEE;
+  text-align: center;
+  font-size: 50px;
+  padding: 20px;
+  z-index: 100;
+  opacity: 0;
+  @include translateY(400px);
+  @include transition(opacity 1s, transform 0.5s 1s);
+}
+
+.impress-enabled .hint {
+  display: block; 
+}
+
+
+.impress-on-bored .hint {
+  opacity: 1;
+  @include translateY(0px);
+  @include transition(opacity 1s 5s, transform 0.5s 4.5s);
+}
+
+.impress-enabled {
+  pointer-events: none;
+  #impress {
+    pointer-events: auto; 
+  } 
+}
+
+}
